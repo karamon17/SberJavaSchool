@@ -15,16 +15,19 @@ public class TerminalImpl implements Terminal{
 
     @Override
     public void checkBalance() {
-        if (pinValidator.isAccountOpen()) {
-            System.out.println("Баланс: " + server.balance());
-        }
-        else {
+        if (!pinValidator.isAccountOpen()) {
             pinValidator.validatePin();
+        }
+        if (pinValidator.isAccountOpen()) {
+            System.out.println("Баланс: " + server.getBalance());
         }
     }
 
     @Override
     public void put(float amount) {
+        if (!pinValidator.isAccountOpen()) {
+            pinValidator.validatePin();
+        }
         if (pinValidator.isAccountOpen()) {
             try {
                 server.put(amount);
@@ -32,22 +35,19 @@ public class TerminalImpl implements Terminal{
                 System.out.println(e.getMessage());
             }
         }
-        else {
-            pinValidator.validatePin();
-        }
     }
 
     @Override
     public void withdraw(float amount) {
+        if (!pinValidator.isAccountOpen()) {
+            pinValidator.validatePin();
+        }
         if (pinValidator.isAccountOpen()) {
             try {
                 server.withdraw(amount);
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }
-        }
-        else {
-            pinValidator.validatePin();
         }
     }
 }

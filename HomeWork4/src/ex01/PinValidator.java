@@ -15,7 +15,6 @@ public class PinValidator {
     }
 
     private boolean isAccountOpen = false;
-
     private int failedAttempts = 0;
     private long lockExpirationTime = 0;
 
@@ -58,8 +57,6 @@ public class PinValidator {
                 }
             } catch (AccountIsLockedException e) {
                 System.out.println("Аккаунт заблокирован на " + e.getRemainingLockTime() + " секунд");
-            } finally {
-                scanner.close();
             }
         }
     }
