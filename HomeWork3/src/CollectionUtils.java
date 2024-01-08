@@ -38,23 +38,28 @@ public class CollectionUtils {
         return false;
     }
 
-    public static <T> List range(List<? extends T> list, T min, T max) {
-        List<? super T> copyList = new ArrayList<>(list);
-        copyList.sort(Comparator.comparingInt((Object o) -> o.hashCode()));
-        if (copyList.indexOf(min) < copyList.indexOf(max)) {
-            return copyList.subList(copyList.indexOf(min), copyList.indexOf(max));
-        } else {
+    public static <T extends Comparable<? super T>> List<T> range(List<T> list, T min, T max) {
+        List<T> result = newArrayList();
+        if (!containsAll(list, Arrays.asList(min, max))) {
             return newArrayList();
         }
+        for (T item : list) {
+            if (item.compareTo(min) >= 0 && item.compareTo(max) <= 0) {
+                result.add(item);
+            }
+        }
+        result.sort(Comparator.naturalOrder());
+        return result;
     }
 
-    public static <T> List range(List<? extends T> list, T min, T max, Comparator<? super T> comparator) {
-        List<? super T> copyList = new ArrayList<T>(list);
-        list.sort(comparator);
-        if (copyList.indexOf(min) < copyList.indexOf(max)) {
-            return copyList.subList(copyList.indexOf(min), copyList.indexOf(max));
-        } else {
-            return newArrayList();
+    public static <T> List<T> range(List<T> list, T min, T max, Comparator<? super T> comparator) {
+        List<T> result = newArrayList();
+        for (T item : list) {
+            if (comparator.compare(item, min) >=0 && comparator.compare(item, max) <= 0) {
+                result.add(item);
+            }
         }
+        result.sort(comparator);
+        return result;
     }
 }
