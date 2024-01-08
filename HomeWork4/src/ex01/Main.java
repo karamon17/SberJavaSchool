@@ -6,6 +6,10 @@ public class Main {
     public static void main(String[] args) {
         TerminalImpl terminal = new TerminalImpl("1234");
 
+        while (!terminal.getPinValidator().isAccountOpen()) {
+            terminal.inputPinAndValidate();
+        }
+
         Scanner scanner = new Scanner(System.in);
         while (true) {
             int userInput;

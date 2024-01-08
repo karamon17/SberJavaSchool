@@ -2,6 +2,11 @@ package ex01;
 
 public class TerminalImpl implements Terminal{
     private final TerminalServer server;
+
+    public PinValidator getPinValidator() {
+        return pinValidator;
+    }
+
     private final PinValidator pinValidator;
 
     public TerminalImpl(String correctPin) {
@@ -15,30 +20,19 @@ public class TerminalImpl implements Terminal{
 
     @Override
     public void checkBalance() {
-        if (!pinValidator.isAccountOpen()) {
-            pinValidator.validatePin();
-        }
-        if (pinValidator.isAccountOpen()) {
             System.out.println("Баланс: " + server.getBalance());
-        }
     }
 
     @Override
     public void put(int amount) {
-        if (!pinValidator.isAccountOpen()) {
-            pinValidator.validatePin();
-        }
-        if (pinValidator.isAccountOpen() && checkAmount(amount)) {
+        if (checkAmount(amount)) {
             server.put(amount);
         }
     }
 
     @Override
     public void withdraw(int amount) {
-        if (!pinValidator.isAccountOpen()) {
-            pinValidator.validatePin();
-        }
-        if (pinValidator.isAccountOpen() && checkAmount(amount)) {
+        if (checkAmount(amount)) {
             server.withdraw(amount);
         }
     }

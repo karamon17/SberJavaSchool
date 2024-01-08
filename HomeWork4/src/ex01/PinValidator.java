@@ -24,9 +24,6 @@ public class PinValidator {
             StringBuilder pinInput = new StringBuilder();
             try {
                 while (true) {
-                    if (isAccountLocked()) {
-                        throw new AccountIsLockedException(getRemainingLockTime());
-                    }
                     for (int i = 1; i <= 4; i++) {
                         boolean validInput = false;
                         while (!validInput) {
@@ -40,6 +37,9 @@ public class PinValidator {
                                 System.out.println("Предупреждение! Введите корректную цифру.");
                             }
                         }
+                    }
+                    if (isAccountLocked()) {
+                        throw new AccountIsLockedException(getRemainingLockTime());
                     }
                     if (pinInput.toString().equals(correctPin)) {
                         System.out.println("Пин-код верен. Доступ разрешен.");
