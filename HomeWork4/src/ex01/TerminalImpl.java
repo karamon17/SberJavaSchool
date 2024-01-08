@@ -24,30 +24,34 @@ public class TerminalImpl implements Terminal{
     }
 
     @Override
-    public void put(float amount) {
+    public void put(int amount) {
         if (!pinValidator.isAccountOpen()) {
             pinValidator.validatePin();
         }
-        if (pinValidator.isAccountOpen()) {
-            try {
-                server.put(amount);
-            } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
-            }
+        if (pinValidator.isAccountOpen() && checkAmount(amount)) {
+            server.put(amount);
         }
     }
 
     @Override
-    public void withdraw(float amount) {
+    public void withdraw(int amount) {
         if (!pinValidator.isAccountOpen()) {
             pinValidator.validatePin();
         }
-        if (pinValidator.isAccountOpen()) {
-            try {
-                server.withdraw(amount);
-            } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
-            }
+        if (pinValidator.isAccountOpen() && checkAmount(amount)) {
+            server.withdraw(amount);
+        }
+    }
+
+    public static boolean checkAmount(int amount) {
+        if (amount % 100 == 0 && amount > 0) {
+            return true;
+        }
+        else if (amount < 0) {
+            throw new IllegalArgumentException("Сумма должна быть положительной");
+        }
+        else {
+            throw new IllegalArgumentException("Сумма должна быть кратна 100");
         }
     }
 }
