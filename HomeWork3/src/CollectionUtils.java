@@ -13,12 +13,8 @@ public class CollectionUtils {
         return source.indexOf(o);
     }
 
-    public static <T> List<? super T> limit(List<? super T> source, int size) {
-        if ((source.size() == size) || (source.size() < size)) {
-            return source;
-        } else {
-            return source.subList(0, size);
-        }
+    public static <T> List<T> limit(List<? extends T> source, int size) {
+        return new ArrayList<>(source.subList(0, Math.min(size, source.size())));
     }
 
     public static <T> void add(List<? super T> source, T o) {
