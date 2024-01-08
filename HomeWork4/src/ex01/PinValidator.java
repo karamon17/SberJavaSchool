@@ -30,7 +30,7 @@ public class PinValidator {
                     for (int i = 1; i <= 4; i++) {
                         boolean validInput = false;
                         while (!validInput) {
-                            System.out.print("Введите цифру " + i + ": ");
+                            System.out.print("Введите цифру " + i + " пин-кода: ");
                             String userInput = scanner.nextLine();
 
                             if (userInput.length() == 1 && Character.isDigit(userInput.charAt(0))) {
