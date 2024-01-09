@@ -2,16 +2,15 @@ package ex01;
 
 public class TerminalImpl implements Terminal{
     private final TerminalServer server;
-
-    public PinValidator getPinValidator() {
-        return pinValidator;
-    }
-
     private final PinValidator pinValidator;
 
     public TerminalImpl(String correctPin) {
         this.server = new TerminalServer();
         this.pinValidator = new PinValidator(correctPin);
+    }
+
+    public PinValidator getPinValidator() {
+        return pinValidator;
     }
 
     public void inputPinAndValidate() {
@@ -20,7 +19,7 @@ public class TerminalImpl implements Terminal{
 
     @Override
     public void checkBalance() {
-            System.out.println("Баланс: " + server.getBalance());
+        System.out.println("Баланс: " + server.getBalance());
     }
 
     @Override
