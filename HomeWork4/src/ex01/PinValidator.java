@@ -3,8 +3,8 @@ package ex01;
 import java.util.Scanner;
 
 public class PinValidator {
-    private final int MAX_ATTEMPTS = 3;
-    private final int LOCK_DURATION_SECONDS = 10;
+    private static final int MAX_ATTEMPTS = 3;
+    private static final int LOCK_DURATION_SECONDS = 10;
     private final String correctPin;
     private boolean isAccountOpen = false;
     private int failedAttempts = 0;

@@ -24,16 +24,14 @@ public class TerminalImpl implements Terminal{
 
     @Override
     public void put(int amount) {
-        if (checkAmount(amount)) {
-            server.put(amount);
-        }
+        checkAmount(amount);
+        server.put(amount);
     }
 
     @Override
     public void withdraw(int amount) {
-        if (checkAmount(amount)) {
-            server.withdraw(amount);
-        }
+        checkAmount(amount);
+        server.withdraw(amount);
     }
 
     public static boolean checkAmount(int amount) {
