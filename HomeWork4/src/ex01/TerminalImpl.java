@@ -24,14 +24,22 @@ public class TerminalImpl implements Terminal{
 
     @Override
     public void put(int amount) {
-        checkAmount(amount);
-        server.put(amount);
+        try {
+            checkAmount(amount);
+            server.put(amount);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override
     public void withdraw(int amount) {
-        checkAmount(amount);
-        server.withdraw(amount);
+        try {
+            checkAmount(amount);
+            server.withdraw(amount);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public static boolean checkAmount(int amount) {

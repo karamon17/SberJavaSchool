@@ -17,19 +17,11 @@ public class Main {
                 case 1 -> terminal.checkBalance();
                 case 2 -> {
                     int amount = inputAmount(scanner);
-                    try {
-                        terminal.put(amount);
-                    } catch (IllegalArgumentException e) {
-                        System.out.println(e.getMessage());
-                    }
+                    terminal.put(amount);
                 }
                 case 3 -> {
                     int amount = inputAmount(scanner);
-                    try {
-                        terminal.withdraw(amount);
-                    } catch (IllegalArgumentException e) {
-                        System.out.println(e.getMessage());
-                    }
+                    terminal.withdraw(amount);
                 }
                 case 0 -> System.exit(0);
                 default -> System.out.println("Нет такого варианта!");
