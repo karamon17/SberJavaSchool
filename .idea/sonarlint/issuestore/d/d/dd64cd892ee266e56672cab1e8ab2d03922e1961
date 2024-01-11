@@ -1,0 +1,14 @@
+
+7
+java:S1220""Move this file to a named package.8•ëÃÁÏ1
+L	java:S106"+Replace this use of System.out by a logger.(ÃØÉÏüÿÿÿÿ8¹ëÃÁÏ1
+G	java:S106
+"+Replace this use of System.out by a logger.(¢ æ—8¹ëÃÁÏ1
+F	java:S106"+Replace this use of System.out by a logger.(©İÑJ8ºëÃÁÏ1
+G	java:S106"+Replace this use of System.out by a logger.(ù±•8»ëÃÁÏ1
+G	java:S106"+Replace this use of System.out by a logger.(ïçä©8¼ëÃÁÏ1
+L	java:S106"+Replace this use of System.out by a logger.(ŒõŸÌúÿÿÿÿ8¿ëÃÁÏ1
+I
+java:S3011.",This accessibility update should be removed.(˜ÂÓ˜8ªºÚÁÏ1
+G	java:S1066"+Replace this use of System.out by a logger.(—©ä8¿ëÃÁÏ1
+G	java:S1068"+Replace this use of System.out by a logger.(¡üË¤8ƒ‹™ÃÏ1
