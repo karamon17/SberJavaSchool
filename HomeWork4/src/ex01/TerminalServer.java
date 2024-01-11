@@ -2,6 +2,7 @@ package ex01;
 
 public class TerminalServer {
     private float balance = 0;
+    private static final MessageDisplay display = new ConsoleDisplay();
 
     public float getBalance() {
         return balance;
@@ -9,7 +10,7 @@ public class TerminalServer {
 
     public void put(int amount) throws IllegalArgumentException {
         balance += amount;
-        System.out.println("На счет зачислено: " + amount);
+        display.displayMessage("На счет зачислено: " + amount);
     }
 
     public void withdraw(int amount) throws IllegalArgumentException {
@@ -17,6 +18,6 @@ public class TerminalServer {
             throw new IllegalArgumentException("Недостаточно средств на счете");
         }
         balance -= amount;
-        System.out.println("Со счета снято: " + amount);
+        display.displayMessage("Со счета снято: " + amount);
     }
 }

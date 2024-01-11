@@ -3,6 +3,7 @@ package ex01;
 public class TerminalImpl implements Terminal{
     private final TerminalServer server;
     private final PinValidator pinValidator;
+    private static final MessageDisplay display = new ConsoleDisplay();
 
     public TerminalImpl(String correctPin) {
         this.server = new TerminalServer();
@@ -19,7 +20,7 @@ public class TerminalImpl implements Terminal{
 
     @Override
     public void checkBalance() {
-        System.out.println("Баланс: " + server.getBalance());
+        display.displayMessage("Баланс: " + server.getBalance());
     }
 
     @Override
@@ -28,7 +29,7 @@ public class TerminalImpl implements Terminal{
             checkAmount(amount);
             server.put(amount);
         } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
+            display.displayMessage(e.getMessage());
         }
     }
 
@@ -38,18 +39,15 @@ public class TerminalImpl implements Terminal{
             checkAmount(amount);
             server.withdraw(amount);
         } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
+            display.displayMessage(e.getMessage());
         }
     }
 
-    public static boolean checkAmount(int amount) {
-        if (amount % 100 == 0 && amount > 0) {
-            return true;
-        }
-        else if (amount < 0) {
+    public static void checkAmount(int amount) {
+        if (amount < 0) {
             throw new IllegalArgumentException("Сумма должна быть положительной");
         }
-        else {
+        else if (amount % 100 != 0){
             throw new IllegalArgumentException("Сумма должна быть кратна 100");
         }
     }

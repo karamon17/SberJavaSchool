@@ -10,6 +10,8 @@ public class PinValidator {
     private int failedAttempts = 0;
     private long lockExpirationTime = 0;
 
+    private static final MessageDisplay display = new ConsoleDisplay();
+
     public PinValidator(String correctPin) {
         this.correctPin = correctPin;
     }
@@ -26,12 +28,12 @@ public class PinValidator {
                     throw new AccountIsLockedException(getRemainingLockTime());
                 }
                 if (pinInput.toString().equals(correctPin)) {
-                    System.out.println("Пин-код верен. Доступ разрешен.");
+                    display.displayMessage("Пин-код верен. Доступ разрешен.");
                     isAccountOpen = true;
                     break;
                 } else {
                     failedAttempts++;
-                    System.out.println("Неверный пин-код. Осталось попыток: " + (MAX_ATTEMPTS - failedAttempts));
+                    display.displayMessage("Неверный пин-код. Осталось попыток: " + (MAX_ATTEMPTS - failedAttempts));
                     pinInput.setLength(0);
                     if (failedAttempts >= MAX_ATTEMPTS) {
                         lockAccount();
@@ -40,7 +42,7 @@ public class PinValidator {
                 }
             }
         } catch (AccountIsLockedException e) {
-            System.out.println("Аккаунт заблокирован на " + e.getRemainingLockTime() + " секунд");
+            display.displayMessage("Аккаунт заблокирован на " + e.getRemainingLockTime() + " секунд");
         }
     }
 
@@ -63,13 +65,13 @@ public class PinValidator {
         for (int i = 1; i <= 4; i++) {
             boolean validInput = false;
             while (!validInput) {
-                System.out.print("Введите цифру " + i + " пин-кода: ");
+                display.displayMessage("Введите цифру " + i + " пин-кода: ");
                 String userInput = scanner.nextLine();
                 if (userInput.length() == 1 && Character.isDigit(userInput.charAt(0))) {
                     validInput = true;
                     pinInput.append(userInput);
                 } else {
-                    System.out.println("Предупреждение! Введите корректную цифру.");
+                    display.displayMessage("Предупреждение! Введите корректную цифру.");
                 }
             }
         }
