@@ -29,10 +29,6 @@ V
 &HomeWork4/src/ex01/ConsoleDisplay.java,7/9/7941107acf298be6e78c95b13849e71dda04509c
 G
 HomeWork5/src/Main.java,d/d/dd64cd892ee266e56672cab1e8ab2d03922e1961
-M
-HomeWork5/src/Calculator.java,c/9/c90e73eaf4ebb0b90e81ba2491f63a9a5e72ba5a
-Q
-!HomeWork5/src/CalculatorImpl.java,b/e/be36e590dfe7f90e376d5b59749b010e8f0274ff
 Å
 Q.idea/sonarlint/securityhotspotstore/8/6/86117041a3b7686d8d66ea1d46b3afa2d973a584,c/1/c17005ed9f7be84d2a624286525a5580eb16a434
 w
@@ -100,8 +96,22 @@ M
 M
 HomeWork5/src/task4/Main.java,8/d/8d8ec82074bcd4448c4db7cb2dd4fc0df906a0a9
 N
-HomeWork5/src/task4/Child.java,c/2/c203314733f80bbfc7464d1c00f552dc32138c84
-O
-HomeWork5/src/task4/Parent.java,4/d/4d9786592cb0388a48e0cf0615499ea6b1344e56
-N
 HomeWork5/src/task4/Task4.java,e/c/ec13655728e5c13be07c22bae52832754f6a533d
+T
+$HomeWork5/src/task5/DataService.java,5/d/5dfac253a711472b0c8dc1d3e32c33d27206a217
+X
+(HomeWork5/src/task5/DataServiceImpl.java,d/e/de770599179eba89f58a4c90ec4c226eb9a1de2f
+U
+%HomeWork5/src/task5/CachingProxy.java,4/f/4fbe732254d3f68899f5bb74641cc949aa129b80
+M
+HomeWork5/src/task5/Main.java,f/0/f0c352ca8563295cc1ac67f03c1005ee38dcc86a
+S
+#HomeWork5/src/task6/Calculator.java,d/c/dc487cb4d09973e98030c4b03e72a11b8a9c98b9
+W
+'HomeWork5/src/task6/CalculatorImpl.java,4/3/439821434ea9b504631e6c7932dd8d96e2b4d36a
+Y
+)HomeWork5/src/task6/PerformanceProxy.java,0/d/0d6312fd6680b0ec7d6ec1fbffb7c364fbb363e4
+M
+HomeWork5/src/task6/Main.java,8/f/8fce6d9458240f8aa1c2ac3e57039bfcbe5f397f
+O
+HomeWork5/src/task6/Metric.java,e/8/e8177ab63e7e7b8fce2d86cde887f13a22028bef
