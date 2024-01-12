@@ -6,7 +6,7 @@ public class CalculatorImpl implements Calculator {
         if (number < 0) {
             throw new IllegalArgumentException("Число должно быть положительным");
         }
-        else if (number == 1 || number == 0) {
+        else if (number <= 1) {
             return 1;
         }
         else {

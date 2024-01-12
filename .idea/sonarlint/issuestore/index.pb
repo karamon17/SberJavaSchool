@@ -115,3 +115,11 @@ M
 HomeWork5/src/task6/Main.java,8/f/8fce6d9458240f8aa1c2ac3e57039bfcbe5f397f
 O
 HomeWork5/src/task6/Metric.java,e/8/e8177ab63e7e7b8fce2d86cde887f13a22028bef
+R
+"HomeWork5/src/task7/BeanUtils.java,a/a/aa118b3adf9dc5f2ba3c998ecf743eda48fcc778
+S
+#HomeWork5/src/task7/PersonFrom.java,c/1/c1388e9a2206b81ed0a945c34c038e14d6255cd0
+Q
+!HomeWork5/src/task7/PersonTo.java,3/c/3c06f00a5659d93ff6419f83ae652879ad74131f
+M
+HomeWork5/src/task7/Main.java,f/3/f35327f63283d749775ea2817a15c837a0c2c9c5
