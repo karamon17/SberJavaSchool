@@ -33,8 +33,6 @@ M
 HomeWork5/src/Calculator.java,c/9/c90e73eaf4ebb0b90e81ba2491f63a9a5e72ba5a
 Q
 !HomeWork5/src/CalculatorImpl.java,b/e/be36e590dfe7f90e376d5b59749b010e8f0274ff
-M
-HomeWork5/src/CalcParent.java,0/b/0ba7de9a05500b33e738d831f12df1af6a1aa548
 Å
 Q.idea/sonarlint/securityhotspotstore/8/6/86117041a3b7686d8d66ea1d46b3afa2d973a584,c/1/c17005ed9f7be84d2a624286525a5580eb16a434
 w
@@ -81,3 +79,29 @@ Q.idea/sonarlint/securityhotspotstore/b/f/bfe2eaff6a5d6c9869ca9a4dd48c38adcf231b
 Q.idea/sonarlint/securityhotspotstore/b/3/b3f9b89c6bee46a36f5b2f9881c8df865e73d9c8,6/c/6cdfd5c8674076529a1d0c70e82d1c9c1176a30c
 Å
 Q.idea/sonarlint/securityhotspotstore/0/d/0d7c70f3a1491286be93d201fb045882fe1dfd20,7/a/7a7c632a27fe3a9955d157a29178c11d7c181254
+S
+#HomeWork5/src/task1/Calculator.java,f/2/f2ac41f0cc35a33cb6a32ae364dc9eb0afb365da
+W
+'HomeWork5/src/task1/CalculatorImpl.java,c/9/c90323ea515c0bde9359549156a820ae94faf9e3
+M
+HomeWork5/src/task1/Main.java,f/4/f4e598dfc663ee14f4043325b81ccce937a03329
+O
+HomeWork5/src/task2/Parent.java,b/8/b817d344edca444510c145d3a27f5410d9d0645b
+N
+HomeWork5/src/task2/Child.java,0/f/0f4aad078d8b2219d97feec9bb5cecad147395ae
+M
+HomeWork5/src/task2/Main.java,0/b/0b5b654fa06cd3ee7e26fa74187bb1bac8b4760c
+O
+HomeWork5/src/task3/Parent.java,7/7/77c93f5a6fc11b91d8543db4cdd8741ad4578d43
+N
+HomeWork5/src/task3/Child.java,5/2/522dde3629cadcd9196f61768934dc71310de056
+M
+HomeWork5/src/task3/Main.java,e/b/eb66d1bffb6456a67b2542ed6582607f22950412
+M
+HomeWork5/src/task4/Main.java,8/d/8d8ec82074bcd4448c4db7cb2dd4fc0df906a0a9
+N
+HomeWork5/src/task4/Child.java,c/2/c203314733f80bbfc7464d1c00f552dc32138c84
+O
+HomeWork5/src/task4/Parent.java,4/d/4d9786592cb0388a48e0cf0615499ea6b1344e56
+N
+HomeWork5/src/task4/Task4.java,e/c/ec13655728e5c13be07c22bae52832754f6a533d

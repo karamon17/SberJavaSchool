@@ -1,3 +1,5 @@
+package task1;
+
 public interface Calculator{
     /**
      * Расчет факториала числа.

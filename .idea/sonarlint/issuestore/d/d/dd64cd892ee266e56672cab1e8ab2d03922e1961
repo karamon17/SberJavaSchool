@@ -1,14 +1,13 @@
 
 7
-java:S1220""Move this file to a named package.8•ëÃÁÏ1
-L	java:S106"+Replace this use of System.out by a logger.(ÃØÉÏüÿÿÿÿ8¹ëÃÁÏ1
-G	java:S106
-"+Replace this use of System.out by a logger.(¢ æ—8¹ëÃÁÏ1
-F	java:S106"+Replace this use of System.out by a logger.(©İÑJ8ºëÃÁÏ1
-G	java:S106"+Replace this use of System.out by a logger.(ù±•8»ëÃÁÏ1
-G	java:S106"+Replace this use of System.out by a logger.(ïçä©8¼ëÃÁÏ1
-L	java:S106"+Replace this use of System.out by a logger.(ŒõŸÌúÿÿÿÿ8¿ëÃÁÏ1
+java:S1220""Move this file to a named package.8ó×ãÏ1
+L	java:S106"+Replace this use of System.out by a logger.(ÃØÉÏüÿÿÿÿ8Â…îãÏ1
+G	java:S106"+Replace this use of System.out by a logger.(¢ æ—8Ã…îãÏ1
+F	java:S106"+Replace this use of System.out by a logger.(©İÑJ8Ã…îãÏ1
+G	java:S106"+Replace this use of System.out by a logger.(ù±•8Ä…îãÏ1
+G	java:S106"+Replace this use of System.out by a logger.(ïçä©8Å…îãÏ1
+L	java:S106!"+Replace this use of System.out by a logger.(ŒõŸÌúÿÿÿÿ8Å…îãÏ1
 I
-java:S3011.",This accessibility update should be removed.(˜ÂÓ˜8ªºÚÁÏ1
-G	java:S1066"+Replace this use of System.out by a logger.(—©ä8¿ëÃÁÏ1
-G	java:S1068"+Replace this use of System.out by a logger.(¡üË¤8ƒ‹™ÃÏ1
+java:S30111",This accessibility update should be removed.(˜ÂÓ˜8È…îãÏ1
+G	java:S1069"+Replace this use of System.out by a logger.(—©ä8É…îãÏ1
+G	java:S106;"+Replace this use of System.out by a logger.(¡üË¤8É…îãÏ1
