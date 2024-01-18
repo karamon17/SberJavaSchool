@@ -7,10 +7,11 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorImplTest {
+    Calculator calculator = new CalculatorImpl();
+
     @ParameterizedTest
     @ValueSource(ints = {0, 1, 2, 3, 4, 6})
     void testCalcFactorial(int input) {
-        Calculator calculator = new CalculatorImpl();
 
         int result = calculator.calc(input);
 
@@ -32,5 +33,12 @@ class CalculatorImplTest {
                 assertEquals(720, result);
                 break;
         }
+    }
+
+    @Test
+    void testCalcFactorialIfNegativeInputThrowIllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            calculator.calc(-5);
+        });
     }
 }
