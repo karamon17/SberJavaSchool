@@ -36,7 +36,7 @@ class CalculatorImplTest {
     }
 
     @Test
-    void testCalcFactorialIfNegativeInputThrowIllegalArgumentException() {
+    void testCalcFactorialIfNegativeInputExpectIllegalArgumentException() {
         assertThrows(IllegalArgumentException.class, () -> {
             calculator.calc(-5);
         });

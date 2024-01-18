@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class BeanUtilsTest {
 
     @Test
-    void testAssignIfOneOfObjectsIsNullThrowIllegalArgumentException() {
+    void testAssignIfOneOfObjectsIsNullExpectIllegalArgumentException() {
         PersonFrom from = new PersonFrom("Lena", 30);
         PersonTo to = null;
         assertThrows(IllegalArgumentException.class, () -> {
@@ -15,7 +15,7 @@ class BeanUtilsTest {
     }
 
     @Test
-    void testAssignIfAllFieldsOfObjectsAreEqualAfterAssignAssertTrue() {
+    void testAssignIfAllFieldsOfObjectsAreEqualAfterAssignExpectTrue() {
         PersonFrom from = new PersonFrom("Vova", 28);
         PersonTo to = new PersonTo();
 
