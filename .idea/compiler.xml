@@ -7,7 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="OwnIterator" />
+        <module name="Recommendations" />
         <module name="HomeWork5" />
+        <module name="Friends" />
+        <module name="Profiles" />
+        <module name="Chat" />
+        <module name="Photo" />
+        <module name="Gifts" />
       </profile>
     </annotationProcessing>
   </component>
