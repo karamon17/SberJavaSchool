@@ -16,7 +16,6 @@
         <module>Profiles</module>
         <module>Photo</module>
         <module>Chat</module>
-        <module>Recommendations</module>
         <module>Gifts</module>
     </modules>
 

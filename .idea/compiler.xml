@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="OwnIterator" />
-        <module name="Recommendations" />
         <module name="HomeWork5" />
         <module name="Friends" />
         <module name="Profiles" />
@@ -16,5 +15,8 @@
         <module name="Gifts" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Recommendations" target="21" />
+    </bytecodeTargetLevel>
   </component>
 </project>
