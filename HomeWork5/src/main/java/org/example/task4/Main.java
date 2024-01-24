@@ -7,6 +7,10 @@ public class Main {
         constantChecker(Task4.class);
     }
 
+    /**
+     * Метод проверяет, что все String константы имеют значение, равное их имени
+     * @param clazz класс, в котором необходимо проверить константы
+     */
     private static void constantChecker(Class<?> clazz) {
         Field[] fields = clazz.getDeclaredFields();
         for (Field field : fields) {

@@ -7,6 +7,10 @@ public class Main {
         printMethods(Child.class);
     }
 
+    /**
+     * Метод выводит на экран все методы класса и его родительских классов
+     * @param clazz класс, в котором необходимо найти методы
+     */
     public static void printMethods(Class<?> clazz){
         Method[] methods = clazz.getDeclaredMethods();
         System.out.println("-------------------------------------\n" + clazz.getSimpleName() + " methods:\n");

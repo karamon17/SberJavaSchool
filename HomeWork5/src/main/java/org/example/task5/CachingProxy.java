@@ -14,6 +14,13 @@ class CachingProxy implements InvocationHandler {
         this.target = target;
     }
 
+    /**
+     * Создает прокси-объект для класса, реализующего интерфейс interfaceClass
+     * @param target объект, для которого создается прокси
+     * @param interfaceClass интерфейс, который реализует класс target
+     * @param <T> тип интерфейса
+     * @return прокси-объект
+     */
     @SuppressWarnings("unchecked")
     public static <T> T createProxy(Object target, Class<T> interfaceClass) {
         return (T) Proxy.newProxyInstance(
@@ -23,6 +30,14 @@ class CachingProxy implements InvocationHandler {
         );
     }
 
+    /**
+     * Вызывается при вызове метода у прокси-объекта
+     * @param proxy прокси-объект
+     * @param method метод, который вызывается у прокси-объекта
+     * @param args аргументы метода
+     * @return результат работы метода
+     * @throws Throwable исключение, которое может быть брошено методом
+     */
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         String key = method.getName() + "_" + args[0];
