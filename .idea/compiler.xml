@@ -13,6 +13,9 @@
         <module name="Chat" />
         <module name="Photo" />
         <module name="Gifts" />
+        <module name="task1" />
+        <module name="task2" />
+        <module name="task3" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
