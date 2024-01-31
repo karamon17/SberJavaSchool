@@ -15,28 +15,36 @@ public class Streams<T> {
         return new Streams<>(list);
     }
 
-    public Streams<T> filter(Predicate<T> predicate) {
+    /**
+     * @param predicate - condition for filtering
+     * @return new Streams object with filtered list
+     */
+    public Streams<T> filter(Predicate<? super T> predicate) {
         list.removeIf(predicate.negate());
         return this;
     }
 
-    public <R> Streams<T> transform(Function<T, R> transformFunction) {
+    /**
+     * @param transformFunction - function for transforming
+     * @param <R>               - type of transformed object
+     * @return new Streams object with transformed list
+     */
+    public <R> Streams<T> transform(Function<? super T, ? extends R> transformFunction) {
         list.replaceAll(t -> (T) transformFunction.apply(t));
         return this;
     }
 
-    public <K, V> Map<K, V> toMap(Function<T, K> keyFunction, Function<T, V> valueFunction) {
+    /**
+     * @param keyFunction   - function for getting key
+     * @param valueFunction - function for getting value
+     * @param <K>           - type of key
+     * @param <V>           - type of value
+     * @return map with key and value
+     */
+    public <K, V> Map<K, V> toMap(Function<? super T, ? extends K> keyFunction, Function<? super T, ? extends V> valueFunction) {
         Map<K, V> map = new HashMap<>();
         list.forEach(o -> map.put(keyFunction.apply(o), valueFunction.apply(o)));
         return map;
     }
 
-    public static void main(String[] args) {
-        List<String> list = Arrays.asList("a", "b", "c", "d", "e");
-        Map<String, String> m = Streams.of(list)
-                .filter(o -> o.equals("a") || o.equals("b"))
-                .transform(o -> o + "new")
-                .toMap(String::toUpperCase, String::toLowerCase);
-        System.out.println(m);
-    }
 }
