@@ -47,4 +47,7 @@ public class Streams<T> {
         return map;
     }
 
+    public List<T> toList() {
+        return list;
+    }
 }
