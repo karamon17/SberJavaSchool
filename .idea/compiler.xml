@@ -9,15 +9,16 @@
         <module name="OwnIterator" />
         <module name="HomeWork5" />
         <module name="Friends" />
-        <module name="Profiles" />
-        <module name="Chat" />
         <module name="HomeWork8" />
         <module name="HomeWork9" />
         <module name="Photo" />
+        <module name="Profiles" />
+        <module name="Chat" />
         <module name="Gifts" />
         <module name="task1" />
         <module name="task2" />
         <module name="task3" />
+        <module name="HomeWork10" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
