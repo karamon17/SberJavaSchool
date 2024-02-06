@@ -2,28 +2,30 @@ package org.example;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ScalableThreadPool implements ThreadPool {
 
-    public ScalableThreadPool(int MinAmountOfThreads, int MaxAmountOfThreads) {
-        this.MinAmountOfThreads = MinAmountOfThreads;
-        this.MaxAmountOfThreads = MaxAmountOfThreads;
-        threads = new Thread[MaxAmountOfThreads];
+    public ScalableThreadPool(int minAmountOfThreads, int maxAmountOfThreads) {
+        this.minAmountOfThreads = minAmountOfThreads;
+        this.maxAmountOfThreads = maxAmountOfThreads;
+        threads = new Thread[maxAmountOfThreads];
         tasks = new LinkedBlockingQueue<>();
+        currentAmountOfThreads = new AtomicInteger(minAmountOfThreads);
     }
 
-    private final int MinAmountOfThreads;
-    private final int MaxAmountOfThreads;
-    private volatile int CurrentAmountOfThreads;
+    private final int minAmountOfThreads;
+    private final int maxAmountOfThreads;
+    private final AtomicInteger currentAmountOfThreads;
     private final Thread[] threads;
     private final BlockingQueue<Runnable> tasks;
     @Override
     public void start() {
-        for (int i = 0; i < MinAmountOfThreads; i++) {
+        for (int i = 0; i < minAmountOfThreads; i++) {
             threads[i] = new WorkerThread();
             threads[i].start();
         }
-        CurrentAmountOfThreads = MinAmountOfThreads;
+
     }
 
     @Override
@@ -31,20 +33,16 @@ public class ScalableThreadPool implements ThreadPool {
         tasks.offer(runnable);
 
         // Если нет свободных потоков и текущее количество меньше максимального, увеличиваем количество потоков
-        if (tasks.size() > CurrentAmountOfThreads && CurrentAmountOfThreads < MaxAmountOfThreads) {
-            synchronized (this) {
-                threads[CurrentAmountOfThreads] = new WorkerThread();
-                threads[CurrentAmountOfThreads].start();
-                CurrentAmountOfThreads++;
-            }
+        if (tasks.size() > currentAmountOfThreads.get() && currentAmountOfThreads.get() < maxAmountOfThreads) {
+            threads[currentAmountOfThreads.get()] = new WorkerThread();
+            threads[currentAmountOfThreads.get()].start();
+            currentAmountOfThreads.getAndIncrement();
         }
 
         // Если очередь пуста и текущее количество больше минимального, уменьшаем количество потоков
-        if (tasks.isEmpty() && CurrentAmountOfThreads > MinAmountOfThreads) {
+        if (tasks.isEmpty() && currentAmountOfThreads.get() > minAmountOfThreads) {
             tasks.offer(() -> {}); // Пустая задача для принудительного выхода из блокировки потока
-            synchronized (this) {
-                CurrentAmountOfThreads--;
-            }
+            currentAmountOfThreads.getAndDecrement();
         }
     }
 
@@ -66,7 +64,7 @@ public class ScalableThreadPool implements ThreadPool {
     }
 
     public void stop() {
-        for (int i = 0; i < MaxAmountOfThreads; i++) {
+        for (int i = 0; i < maxAmountOfThreads; i++) {
             threads[i].interrupt();
         }
     }
