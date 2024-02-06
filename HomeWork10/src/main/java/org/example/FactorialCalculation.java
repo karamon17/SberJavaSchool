@@ -24,7 +24,7 @@ public class FactorialCalculation implements Runnable {
     /**
      * @return - возвращает факториал числа n
      */
-    private BigInteger calculateFactorial() {
+    public BigInteger calculateFactorial() {
         BigInteger result = BigInteger.ONE;
         for (int i = 1; i <= n; i++) {
             result = result.multiply(BigInteger.valueOf(i));

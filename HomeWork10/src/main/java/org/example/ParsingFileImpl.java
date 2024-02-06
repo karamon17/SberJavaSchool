@@ -1,22 +1,25 @@
 package org.example;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.io.IOException;
-import java.util.Objects;
-
-import static java.lang.System.exit;
 
 public class ParsingFileImpl implements ParsingFile {
     @Override
     public String fileToString(String path) {
         StringBuilder content = new StringBuilder();
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
-            String line;
+        try (FileChannel channel = FileChannel.open(Path.of(path), StandardOpenOption.READ)) {
+            ByteBuffer buffer = ByteBuffer.allocate(1024);
 
-            while ((line = reader.readLine()) != null) {
-                content.append(line).append("\n");
+            while (channel.read(buffer) > 0) {
+                buffer.flip();
+                while (buffer.hasRemaining()) {
+                    content.append((char) buffer.get());
+                }
+                buffer.clear();
             }
         }
         catch (IOException e) {
