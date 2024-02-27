@@ -41,8 +41,6 @@ G.idea/sonarlint/issuestore/0/d/0d7c70f3a1491286be93d201fb045882fe1dfd20,7/6/76
 Q.idea/sonarlint/securityhotspotstore/d/f/dfd62a88e1c2fa0870e70115da2785b658fff1c6,0/4/046c271fbbf7eba260a0e43270202bcce106dfbd
 Å
 Q.idea/sonarlint/securityhotspotstore/a/6/a66400ba7eb4e7d4a72832c688e76c657d1cd09b,e/7/e786a03e0e324cca878412a287c7adf29f525685
-Å
-Q.idea/sonarlint/securityhotspotstore/d/d/dd64cd892ee266e56672cab1e8ab2d03922e1961,0/4/0404d88afe74b76a0b5e762d3eec65eec4f4c97a
 G
 HomeWork5/HomeWork5.iml,0/1/013dd232b692ec3de9b09cd5889449b700bb642d
 Å
@@ -213,3 +211,21 @@ b
 HomeWork9.iml,b/e/bedf6a59012eb3c95d7ca7326aab73bc807cc978
 i
 9HomeWork11/src/main/java/org/example/FixedThreadPool.java,0/a/0ac66df40ac6f6a9fae5035fb5aa23be3be0f7ef
+B
+HomeWork14/pom.xml,5/b/5bdc0c21bea64e185f8d980870861f61422f42aa
+d
+4HomeWork14/src/main/java/org/example/task1/Task.java,7/6/763ee3fd385736edcc9a486f8c66d7710d6d2be6
+v
+FHomeWork14/src/main/java/org/example/task1/TaskExecutionException.java,8/7/87d203bab35253caa8d3c4d48ac0cb1593c9be8b
+d
+4HomeWork14/src/main/java/org/example/task1/Main.java,4/5/45231a14df29803c9fdaf1074897b952e52ecb2d
+p
+@HomeWork14/src/main/java/org/example/task2/ExecutionManager.java,5/6/56c94f5410f8f10ad624c1ada3df95bde369d21f
+g
+7HomeWork14/src/main/java/org/example/task2/Context.java,0/5/0586d2e87f3f85f0ad121b56767da88a6682a802
+t
+DHomeWork14/src/main/java/org/example/task2/ExecutionManagerImpl.java,7/0/709c347ee44ebe72534781fa50e20c976f6236c9
+k
+;HomeWork14/src/main/java/org/example/task2/ContextImpl.java,f/1/f16ce5168a859d565bc37439db74bb7b1aa3432b
+d
+4HomeWork14/src/main/java/org/example/task2/Main.java,4/0/407d9efc0de7cc8517e36bf5e417d30afe512ce7
