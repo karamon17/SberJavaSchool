@@ -6,30 +6,48 @@
     <title>Reactive JSON Viewer</title>
 </head>
 <body>
-<h1>Reactive JSON Viewer</h1>
-<div id="json-container"></div>
+    <h1>Reactive JSON Viewer</h1>
+    <button onclick="interruptRequest()">Прервать</button>
+    <p>Valid JSON:</p>
+    <p>[</p>
+    <div id="json-container"></div>
+    <p>]</p>
 
-<script>
-    const jsonContainer = document.getElementById('json-container');
+    <script>
+        const jsonContainer = document.getElementById('json-container');
+        let eventSource;
 
         function handleJsonChunk(chunk) {
             // Проверяем, что данные не пусты (завершающий чанк)
             if (chunk.trim() !== "") {
-                const parsedJson = JSON.parse(chunk);
-                const jsonElement = document.createElement('pre');
-                jsonElement.textContent = JSON.stringify(parsedJson, null, 2);
-                jsonContainer.appendChild(jsonElement);
+                try {
+                    const parsedJson = JSON.parse(chunk);
+                    const jsonElement = document.createElement('pre');
+                    jsonElement.textContent = JSON.stringify(parsedJson, null, 2);
+                    jsonContainer.appendChild(jsonElement);
+                } catch (error) {
+                    console.error('Ошибка при разборе JSON в чанке: ', chunk, error.message);
+                }
             } else {
                 // Данные пусты, завершаем соединение
                 eventSource.close();
             }
         }
 
-    // Подключение к серверу и получение JSON чанков
-    const eventSource = new EventSource('/api/json-stream');
-    eventSource.onmessage = (event) => {
-        handleJsonChunk(event.data);
-    };
-</script>
+        function interruptRequest() {
+            if (eventSource) {
+                eventSource.close();
+                alert('Запрос прерван.');
+            }
+        }
+
+        // Подключение к серверу и получение JSON чанков
+        document.addEventListener('DOMContentLoaded', () => {
+            eventSource = new EventSource('/api/json-stream');
+            eventSource.onmessage = (event) => {
+                handleJsonChunk(event.data);
+            };
+        });
+    </script>
 </body>
 </html>

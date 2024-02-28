@@ -8,6 +8,7 @@ import java.time.Duration;
 @RestController
 @RequestMapping("/api")
 public class JsonController {
+    private volatile boolean isInterrupted = false;
 
     @GetMapping("/json-stream")
     public Flux<String> getJsonStream() {
@@ -16,6 +17,13 @@ public class JsonController {
                 "{\"field\":\"value1\"}","{\"field\":\"value2\"}","{\"field\":\"value3\"}"
         )
         .delayElements(Duration.ofSeconds(5))
-        .concatWithValues("");
+        .concatWithValues("")
+        .takeUntilOther(Flux.create(sink -> {
+            // Обработка прерывания на сервере
+            if (isInterrupted) {
+                sink.complete();
+            }
+        }))
+        .doOnCancel(() -> isInterrupted = true);
     }
 }
