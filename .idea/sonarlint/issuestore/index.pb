@@ -239,3 +239,16 @@ D
 HomeWork13/README.md,9/1/911c50fae2496088ffa1f7bcb0ddd9ea2bd2c9af
 D
 HomeWork10/README.md,f/4/f4ab20fec796541ca421822a392a453c2ec3d45e
+B
+HomeWork15/pom.xml,7/b/7b7f4aa9c16633f2468f6722a881fa6667076e89
+d
+4HomeWork15/src/main/java/org/example/JITExample.java,7/c/7caca339b5551092ffa7b938148c5f1ce0a58cb3
+D
+HomeWork15/README.md,0/f/0f2ff7da123e76aad22e92e1be61564cbf9dfc45
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+`
+0HomeWork15/src/main/java/org/example/GCDemo.java,c/c/cc0fcd4e75a19cf4207738f22bc832da50de4b53
+r
+BHomeWork15/src/main/java/org/example/GarbageCollectionExample.java,b/d/bd817962d63d9c04ee0d33f99a86a84000e0da35
