@@ -1,6 +1,8 @@
 package org.example;
 
+import java.util.List;
+
 public interface Source {
-    void put(String args, String result);
-    String get(String args);
+    void saveData(String key, List<Integer> result);
+    List<Integer> getData(String key);
 }

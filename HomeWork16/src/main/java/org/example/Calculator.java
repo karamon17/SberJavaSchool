@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-    @Cachable(PosgreSQLSource.class)
+    @Cachable(PostgreSQLSource.class)
     public List<Integer> fibonachi(int n) {
         if (n < 0) {
             throw new IllegalArgumentException("n should be positive");
