@@ -20,7 +20,7 @@ public class PostgreSQLSource implements Source {
     }
     @Override
     public void saveData(String key, List<Integer> result) {
-        String insertQuery = "INSERT INTO cache" + "(key, result) VALUES (?, ?) ON CONFLICT (key) DO NOTHING";
+        String insertQuery = "INSERT INTO cache" + "(key, result) VALUES (?, ?)";
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
             preparedStatement.setString(1, key);
