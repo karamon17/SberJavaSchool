@@ -46,7 +46,7 @@ public class Calculator {
             return List.of(0, 1);
         }
         List<Integer> result = new ArrayList<>(calculateFibonachi(n - 1));
-        result.add(result.getLast() + result.get(result.size() - 2));
+        result.add(result.get(result.size() - 1) + result.get(result.size() - 2));
         return result;
     }
 }
