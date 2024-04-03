@@ -1,4 +1,4 @@
-package org.example.homework20;
+package org.example.homework20.task1;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

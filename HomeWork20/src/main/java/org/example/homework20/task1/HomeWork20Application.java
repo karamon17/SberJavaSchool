@@ -1,4 +1,4 @@
-package org.example.homework20;
+package org.example.homework20.task1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

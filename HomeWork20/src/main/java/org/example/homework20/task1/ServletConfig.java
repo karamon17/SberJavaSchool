@@ -1,4 +1,4 @@
-package org.example.homework20;
+package org.example.homework20.task1;
 
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
